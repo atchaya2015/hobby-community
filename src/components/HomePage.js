@@ -25,6 +25,7 @@ export default function HomePage() {
   const [isProductHovered, setIsProductHovered] = useState(false);
   const [isProgramHovered, setIsProgramHovered] = useState(false);
   
+  
 
 
   const togglePasswordVisibility = () => {
