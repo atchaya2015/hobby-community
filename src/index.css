@@ -1,13 +1,92 @@
+
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+ 
+  font-family: 'Poppins', sans-serif !important;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+button, input, textarea, select {
+  font-family: 'Poppins', sans-serif !important;
 }
+
+
+.text-hobby {
+  color: #5c3d99;
+}
+.logo-box {
+  width: 36px;
+  height: 36px;
+  border-color: #5c3d99 !important; /* matches your purple */
+  color: #5c3d99;                   /* text color inside */
+}
+.custom-navbar {
+  
+  min-height: 80px;
+  opacity: 1; /* Not strictly necessary as it's the default */
+}
+
+.custom-navbar-container {
+  width: 1440px;
+}
+.search-frame{
+ width: 300;
+height: 40;
+opacity: 1;
+top: 20px;
+left: 425px;
+
+
+
+}
+.section-frame {
+  width: 300px;    
+  margin-left: 325px;        /* or 100% if you like */
+}
+
+.search-icon-1 {
+  top: 50%;
+  padding: auto;
+  right: 12px;             /* distance from right edge of the input */
+  transform: translateY(-50%);
+  color: #FFFFFF;
+  background-color: #5c3d99; 
+         /* optional color */
+  pointer-events: none;    /* allows clicks to go through to the input */
+}
+
+.icon-button {
+  width: 24px;
+  height: 24px;
+}
+.icon-frame{
+  width: 14px;
+ height: 18px;
+  color :#8064A2;
+
+}
+
+
+@media (min-width: 1440px) {   /* Bootstrap's lg breakpoint and above */
+  .section-desktop-678 {
+    min-height: 678px;        /* or height:678px if you want a fixed height */
+  }
+}
+
+.section-img{
+ max-width: 293px;
+height: 60px;
+opacity: 1;
+top: 10px;
+left: 97px;
+
+}
+/* CustomStyles.css */
+
+.add-your-own-card {
+   max-width: 1240px; 
+
+  
+}
+
