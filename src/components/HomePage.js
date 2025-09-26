@@ -43,14 +43,14 @@ export default function HomePage() {
                 Explore your <span className="text-primary">hobby</span> or{" "}
                 <span style={{ color: "#9b59b6" }}>passion</span>
               </h1>
-              <p className="text-muted">
+              <p className=" fs-14px text-muted">
                 Sign-in to interact with a community of fellow hobbyists and an
                 eco-system of experts, teachers, suppliers, classes, workshops,
                 and places to practice, participate or perform. Your hobby may be
                 about visual or performing arts, sports, games, gardening, model
                 making, cooking, indoor or outdoor activities…
               </p>
-              <p className="text-muted">
+              <p className=" fs-14px text-muted">
                 If you are an expert or a seller, you can add your listing and
                 promote yourself, your students, products, services or events. Hop
                 on your hobbyhorse and enjoy the ride.
@@ -180,102 +180,206 @@ export default function HomePage() {
             {/* People Card */}
             <Col md={6}>
               <Card
-                className="h-100 border-light shadow-sm rounded-3"
-                onMouseEnter={() => setIsPeopleHovered(true)}
-                onMouseLeave={() => setIsPeopleHovered(false)}
-                style={{
-                  backgroundColor: isPeopleHovered ? '#8064A2' : 'white',
-                  color: isPeopleHovered ? 'white' : 'inherit',
-                  transition: 'background-color 0.3s ease, color 0.3s ease'
-                }}
-              >
-                <Card.Body>
-                  <div className="d-flex align-items-center mb-3">
-                    <FaUserFriends style={{ color: isPeopleHovered ? 'white' : '#8064A2' }} className="me-2" size={24} />
-                    <Card.Title className="mb-0 fw-bold">People</Card.Title>
-                  </div>
-                  <Card.Text style={{ color: isProgramHovered ?  'white' : 'black' }}>
-                    An individual or Organization. Teacher, Coach, Professional or Online Seller. Company, Business or Association.
-                  </Card.Text>
-                  <Button variant={isPeopleHovered ? 'light' : 'outline-primary'} className="mt-3">Connect</Button>
-                </Card.Body>
-              </Card>
+  className="h-100 border-light shadow-sm rounded-3"
+  onMouseEnter={() => setIsPeopleHovered(true)}
+  onMouseLeave={() => setIsPeopleHovered(false)}
+  style={{
+    backgroundColor: isPeopleHovered ? '#8064A2' : 'white',
+    color: isPeopleHovered ? 'white' : 'inherit',
+    transition: 'background-color 0.3s ease, color 0.3s ease'
+  }}
+>
+  <Card.Body>
+    <div className="d-flex align-items-center mb-3">
+      {/* Icon color changes to white on hover */}
+      <FaUserFriends style={{ color: isPeopleHovered ? 'white' : '#8064A2' }} className="me-2" size={24} />
+      {/* Card.Title color is handled by the parent Card's 'color' style */}
+      <Card.Title className="mb-0 fw-bold">People</Card.Title>
+    </div>
+    
+    {/* 💡 FIX 1: Change 'isProgramHovered' to 'isPeopleHovered' for Card.Text color */}
+    <Card.Text style={{ 
+      color: isPeopleHovered ? 'white' : 'black', // Set to black when not hovered
+      transition: 'color 0.3s ease' 
+    }}>
+      An individual or Organization. Teacher, Coach, Professional or Online Seller. Company, Business or Association.
+    </Card.Text>
+    
+    {/* 💡 FIX 2: Set Button variant to 'light' on hover and use inline style for text color */}
+<Button 
+  variant={isPeopleHovered ? 'light' : 'outline-primary'} 
+  className="mt-3"
+  style={{
+      // Set text color to white when PURPLE card is hovered
+      color: isPeopleHovered ? 'white' : '#8064A2', 
+      borderColor: isPeopleHovered ? 'white' : '#8064A2',
+      // Set background to transparent when hovered, so button is just an outline
+      backgroundColor: isPeopleHovered ? 'transparent' : 'white', 
+      transition: 'color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease'
+  }}
+>
+  Connect
+</Button>
+  </Card.Body>
+</Card>
             </Col>
 
             {/* Place Card */}
             <Col md={6} >
               <Card
-                className="h-100 border-light shadow-sm rounded-3"
-                onMouseEnter={() => setIsPlaceHovered(true)}
-                onMouseLeave={() => setIsPlaceHovered(false)}
-                style={{
-                  backgroundColor: isPlaceHovered ? '#0096C7' : 'white', // Color for Place
-                  color: isPlaceHovered ? 'white' : 'inherit',
-                  transition: 'background-color 0.3s ease, color 0.3s ease'
-                }}
-              >
-                <Card.Body>
-                  <div className="d-flex align-items-center mb-3">
-                    <FaMapMarkerAlt style={{ color: isPlaceHovered ? 'white' : '#0096C7' }} className="me-2" size={24} />
-                    <Card.Title className="mb-0 fw-bold">Place</Card.Title>
-                  </div>
-                  <Card.Text style={{ color: isProgramHovered ?  "white" : "black" }}>
-                    An Address. Classroom, Shop, Performance or Event Venue, Sports Arena, Play Area, Studio, School or Campus.
-                  </Card.Text>
-                  <Button variant={isPlaceHovered ? 'light' : 'outline-primary'} className="mt-3">Meet up</Button>
-                </Card.Body>
-              </Card>
+  className="h-100 border-light shadow-sm rounded-3"
+  onMouseEnter={() => setIsPlaceHovered(true)}
+  onMouseLeave={() => setIsPlaceHovered(false)}
+  style={{
+    // Card background becomes TURQUOISE on hover
+    backgroundColor: isPlaceHovered ? '#0096C7' : 'white', 
+    color: isPlaceHovered ? 'white' : 'inherit',
+    transition: 'background-color 0.3s ease, color 0.3s ease'
+  }}
+>
+  <Card.Body>
+    <div className="d-flex align-items-center mb-3">
+      {/* Icon color changes to white on hover */}
+      <FaMapMarkerAlt style={{ color: isPlaceHovered ? 'white' : '#0096C7'}} className="me-2" size={24} />
+      <Card.Title className="mb-0 fw-bold">Place</Card.Title>
+    </div>
+    
+    {/* 💡 FIX 1: Use isPlaceHovered for Card.Text color change */}
+    <Card.Text style={{ 
+      color: isPlaceHovered ? 'white' : 'black', 
+      transition: 'color 0.3s ease' 
+    }}>
+      An Address. Classroom, Shop, Performance or Event Venue, Sports Arena, Play Area, Studio, School or Campus.
+    </Card.Text>
+    
+    {/* 💡 FIX 2: Set Button to be a TURQUOISE outline when NOT hovered, and a WHITE outline when hovered */}
+    <Button 
+      // Always use 'outline-primary' or 'outline-secondary' to ensure consistent button structure
+      // We will override the colors via style
+      variant={'outline-primary'} 
+      className="mt-3"
+      style={{
+        // Button text color: white on TURQUOISE card, TURQUOISE otherwise
+        color: isPlaceHovered ? 'white' :'#0096C7' , 
+        
+        // Button border color: white on TURQUOISE card, TURQUOISE otherwise
+        borderColor: isPlaceHovered ? 'white' : '#0096C7',
+        
+        // Button background: transparent when hovered (to show card color)
+        backgroundColor: isPlaceHovered ? 'transparent' : 'white', 
+        borderRadius: '8px',
+        transition: 'color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease'
+      }}
+    >
+      Meet up
+    </Button>
+  </Card.Body>
+</Card>
             </Col>
           </Row>
           {/* Product Card */}
           <Row>
             <Col md={6} >
               <Card
-                className="h-100 border-light shadow-sm rounded-3"
-                onMouseEnter={() => setIsProductHovered(true)}
-                onMouseLeave={() => setIsProductHovered(false)}
-                style={{
-                  backgroundColor: isProductHovered ? '#745914' : 'white', // Color for Product
-                  color: isProductHovered ? 'white' : 'inherit',
-                  transition: 'background-color 0.3s ease, color 0.3s ease'
-                }}
-              >
-                <Card.Body>
-                  <div className="d-flex align-items-center mb-3">
-                    <FaShoppingBag style={{ color: isProductHovered ? 'white' : '#745914' }} className="me-2" size={24} />
-                    <Card.Title className="mb-0 fw-bold">Product</Card.Title>
-                  </div>
-                  <Card.Text style={{ color: isProgramHovered ?  "white" : "black" }}>
-                    An Item that you can Book, Buy or Rent. Appointment, Ticket, or Voucher. Equipment, Instrument or Activity Kit.
-                  </Card.Text>
-                  <Button variant={isProductHovered ? 'light' : 'outline-primary'} className="mt-3">Get it</Button>
-                </Card.Body>
-              </Card>
+  className="h-100 border-light shadow-sm rounded-3"
+  onMouseEnter={() => setIsProductHovered(true)}
+  onMouseLeave={() => setIsProductHovered(false)}
+  style={{
+    // Card background becomes PRODUCT_COLOR on hover
+    backgroundColor: isProductHovered ? '#745914' : 'white', 
+    color: isProductHovered ? 'white' : 'inherit',
+    transition: 'background-color 0.3s ease, color 0.3s ease'
+  }}
+>
+  <Card.Body>
+    <div className="d-flex align-items-center mb-3">
+      {/* Icon color changes to white on hover */}
+      <FaShoppingBag style={{ color: isProductHovered ? 'white' : '#745914'}} className="me-2" size={24} />
+      <Card.Title className="mb-0 fw-bold">Product</Card.Title>
+    </div>
+    
+    {/* 💡 FIX 1: Use isProductHovered for Card.Text color change */}
+    <Card.Text style={{ 
+      color: isProductHovered ? 'white' : 'black', 
+      transition: 'color 0.3s ease' 
+    }}>
+      An Item that you can Book, Buy or Rent. Appointment, Ticket, or Voucher. Equipment, Instrument or Activity Kit.
+    </Card.Text>
+    
+    {/* 💡 FIX 2: Adjust Button styles for custom color outline and white text on hover */}
+    <Button 
+      variant={'outline-primary'} 
+      className="mt-3"
+      style={{
+        // Button text color: white on PRODUCT_COLOR card, PRODUCT_COLOR otherwise
+        color: isProductHovered ? 'white' : '#745914', 
+        
+        // Button border color: white on PRODUCT_COLOR card, PRODUCT_COLOR otherwise
+        borderColor: isProductHovered ? 'white' : '#745914',
+        
+        // Button background: transparent when hovered (to show card color)
+        backgroundColor: isProductHovered ? 'transparent' : 'white', 
+        borderRadius: '8px',
+        transition: 'color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease'
+      }}
+    >
+      Get it
+    </Button>
+  </Card.Body>
+</Card>
             </Col>
 
             {/* Program Card */}
             <Col md={6} >
               <Card
-                className="h-100 border-light shadow-sm rounded-3"
-                onMouseEnter={() => setIsProgramHovered(true)}
-                onMouseLeave={() => setIsProgramHovered(false)}
-                style={{
-                  backgroundColor: isProgramHovered ? '#EB3445' : 'white', // Color for Program
-                  color: isProgramHovered ? 'white' : 'inherit',
-                  transition: 'background-color 0.3s ease, color 0.3s ease'
-                }}
-              >
-                <Card.Body>
-                  <div className="d-flex align-items-center mb-3">
-                    <FaCheckCircle style={{ color: isProgramHovered ? 'white' : '#EB3445' }} className="me-2" size={24} />
-                    <Card.Title className="mb-0 fw-bold">Program</Card.Title>
-                  </div>
-                  <Card.Text style={{ color: isProgramHovered ?  "white" : "black" }}>
-                    An Event with Venue and Date. Meetup, Workshop or Webinar. Exhibition, Performance or Competition.
-                  </Card.Text>
-                  <Button variant={isProgramHovered ? 'light' : 'outline-primary'} className="mt-3">Attend</Button>
-                </Card.Body>
-              </Card>
+  className="h-100 border-light shadow-sm rounded-3"
+  onMouseEnter={() => setIsProgramHovered(true)}
+  onMouseLeave={() => setIsProgramHovered(false)}
+  style={{
+    // Card background becomes RED_COLOR on hover
+    backgroundColor: isProgramHovered ? '#EB3445' : 'white', 
+    color: isProgramHovered ? 'white' : 'inherit',
+    transition: 'background-color 0.3s ease, color 0.3s ease'
+  }}
+>
+  <Card.Body>
+    <div className="d-flex align-items-center mb-3">
+      {/* Icon color changes to white on hover */}
+      <FaCheckCircle style={{ color: isProgramHovered ? 'white' : '#EB3445' }} className="me-2" size={24} />
+      <Card.Title className="mb-0 fw-bold">Program</Card.Title>
+    </div>
+    
+    {/* Card.Text color changes to white on hover (already correct) */}
+    <Card.Text style={{ 
+      color: isProgramHovered ? 'white' : 'black', 
+      transition: 'color 0.3s ease' 
+    }}>
+      An Event with Venue and Date. Meetup, Workshop or Webinar. Exhibition, Performance or Competition.
+    </Card.Text>
+    
+    {/* 💡 FIX: Adjust Button styles for red outline and white text on hover */}
+    <Button 
+      // Always use 'outline-primary' or 'outline-secondary' for consistent structure.
+      // We will override the colors via inline style.
+      variant={'outline-primary'} 
+      className="mt-3"
+      style={{
+        // Button text color: white on RED_COLOR card, RED_COLOR otherwise
+        color: isProgramHovered ? 'white' : '#EB3445', 
+        
+        // Button border color: white on RED_COLOR card, RED_COLOR otherwise
+        borderColor: isProgramHovered ? 'white' : '#EB3445',
+        
+        // Button background: transparent when hovered (to show card color)
+        backgroundColor: isProgramHovered ? 'transparent' : 'white', 
+        borderRadius: '8px',
+        transition: 'color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease'
+      }}
+    >
+      Attend
+    </Button>
+  </Card.Body>
+</Card>
             </Col>
           </Row>
         </Container>
@@ -283,18 +387,18 @@ export default function HomePage() {
       <section className="py-5 bg-light">
         <Container fluid>
           <Row className="justify-content-center">
-            <Col lg={11}>
+            <Col lg={10}>
               <Card className="p-4 border-light shadow-sm rounded-3 add-your-own-card">
                 <Card.Body>
                   <div className="d-flex align-items-center mb-3">
                     <FaPlusCircle style={{ color: '#0096C7' }} className="me-3" size={32} />
-                    <Card.Title as="h2" className="mb-0 fw-bold">Add your own</Card.Title>
+                    <Card.Title as="h2" className="mb-0 fw-bold fs-18px text-content fs-4 ">Add your own</Card.Title>
                   </div>
-                  <Card.Text className="text-muted mb-4">
+                  <Card.Text className=" mb-4 fs-18px text-custom text-content">
                     Are you a teacher or expert? Do you sell or rent out equipment, venue or event tickets? Or, you know someone who should
                     be on hobbycue? Go ahead and Add your Own page
                   </Card.Text>
-                  <Button variant="outline-secondary" style={{ borderColor: '#8064A2', color: '#8064A2' }}>
+                  <Button variant="outline-secondary" className="fs-14px" style={{ borderColor: '#8064A2', color: '#8064A2' }}>
                     Add new
                   </Button>
                 </Card.Body>

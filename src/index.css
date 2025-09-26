@@ -12,6 +12,24 @@ button, input, textarea, select {
 }
 
 
+/* CustomStyles.css */
+.fs-14px {
+  font-size: 0.875rem; /* Exactly 14px based on a 16px base */
+}
+/* CustomStyles.css */
+.fs-18px {
+  font-size: 1.125rem; /* This is the equivalent of 18px */
+}
+.text-custom{
+    line-height: 1.875rem; 
+      letter-spacing: 0.02em; 
+
+}
+.text-content{
+  color: #09080A;
+}
+
+
 .text-hobby {
   color: #5c3d99;
 }

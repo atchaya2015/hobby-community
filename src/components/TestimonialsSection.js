@@ -7,14 +7,28 @@ export default function TestimonialsSection() {
     <section className="py-5 bg-light">
       <Container>
         <Row className="justify-content-center">
-          <Col lg={10}>
+          <Col lg={10.5}>
             <Card className="p-4 border-light shadow-sm rounded-3">
               <Card.Body>
-                <div className="d-flex align-items-center mb-4">
-                  <FaQuoteLeft style={{ color: '#8064A2' }} className="me-3" size={32} />
-                  <Card.Title as="h2" className="mb-0 fw-bold">Testimonials</Card.Title>
-                </div>
-                <Card.Text className="text-muted mb-4">
+                <div className="d-flex align-items-center mb-3"> 
+
+                <div 
+    className="rounded-circle d-flex align-items-center justify-content-center me-3" 
+    style={{ 
+      backgroundColor: '#8064A2', 
+      width: '40px',
+      height: '40px', 
+    }}
+  >
+    {/* Icon is correctly placed inside the circle container */}
+    <FaQuoteLeft style={{ color: 'white' }} size={20} />
+  </div>
+  
+  {/* 2. Title (Placed immediately after the circle container) */}
+  <Card.Title as="h2" className="mb-0 text-content fs-4 fw-bold">Testimonials</Card.Title>
+
+</div>
+                <Card.Text className="fs-18 text-custom mb-4" style={{ color: '#6D747A' }}>
                   In a fast growing and ever changing city like Bangalore, it sometimes becomes very difficult to find or connect with like
                   minded people. Websites like hobbycue.com is a great service which helps me get in touch with, communicate, connect, and
                   exchange ideas with other dancers. It also provides the extra benefit of finding products and services that I can avail, which I
@@ -25,11 +39,11 @@ export default function TestimonialsSection() {
 
                 <Row className="align-items-center">
                   <Col md={7} className="mb-3 mb-md-0">
-                    <div className="d-flex align-items-center" style={{ backgroundColor: '#F7F5F9', borderRadius: '8px', padding: '10px 15px' }}>
-                      <Button variant="link" className="p-0 me-3" style={{ color: '#8064A2' }}>
-                        <FaPlayCircle size={28} />
+                    <div className="d-flex align-items-center" style={{ backgroundColor: '#CCC1DA', borderRadius: '8px', padding: '10px 15px' }}>
+                      <Button variant="link" className="p-0 me-3" style={{ color:'#FFFFFF' }}>
+                        <FaPlayCircle size={15} />
                       </Button>
-                      <div style={{ flexGrow: 1, height: '4px', backgroundColor: '#CCCCCC', borderRadius: '2px' }}>
+                      <div style={{ flexGrow: 1, height: '4px',color:'#FFFFFF',backgroundColor: '#CCC1DA', borderRadius: '2px' }}>
                         {/* This represents the progress bar */}
                         <div style={{ width: '20%', height: '100%', backgroundColor: '#8064A2', borderRadius: '2px' }}></div>
                       </div>
@@ -52,8 +66,8 @@ export default function TestimonialsSection() {
                         style={{ width: '60px', height: '60px', objectFit: 'cover' }}
                       />
                       <div>
-                        <h5 className="mb-0 fw-bold" style={{ color: '#8064A2' }}>Shubha Nagarajan</h5>
-                        <p className="mb-0 text-info">Classical Dancer</p>
+                        <h5 className="mb-0 fs-18px fw-bold" style={{ color: '#8064A2' }}>Shubha Nagarajan</h5>
+                        <p className="mb-0 fs-14px text-info">Classical Dancer</p>
                       </div>
                     </div>
                   </Col>
