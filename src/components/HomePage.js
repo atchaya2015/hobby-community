@@ -39,7 +39,7 @@ export default function HomePage() {
           <Row className="align-items-center">
             {/* ==== Left Content ==== */}
             <Col lg={6} className="mb-5 mb-lg-0 ">
-              <h1 className="fw-bold mb-3">
+              <h1 className=" fs-36px fw-bold mb-3">
                 Explore your <span className="text-primary">hobby</span> or{" "}
                 <span style={{ color: "#9b59b6" }}>passion</span>
               </h1>
