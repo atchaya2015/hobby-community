@@ -107,7 +107,7 @@ export default function HomePage() {
                           id="remember-me"
                           label="Remember me"
                         />
-                        <a href="#" className="text-decoration-none" style={{ color: "#8064A2" }}>
+                        <a href="/" className="text-decoration-none" style={{ color: "#8064A2" }}>
                           Forgot password?
                         </a>
                       </div>
@@ -153,8 +153,8 @@ export default function HomePage() {
                       <Form.Group className="mb-3">
                         <Form.Text className="text-muted">
                           By continuing, you agree to our{" "}
-                          <a href="#" style={{ color: "#8064A2" }}>Terms of Service</a> and{" "}
-                          <a href="#" style={{ color: "#8064A2" }}>Privacy Policy</a>.
+                          <a href="/" style={{ color: "#8064A2" }}>Terms of Service</a> and{" "}
+                          <a href="/" style={{ color: "#8064A2" }}>Privacy Policy</a>.
                         </Form.Text>
                       </Form.Group>
                       <Button
