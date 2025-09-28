@@ -7,8 +7,8 @@ export default function CallToActionSection() {
       <Container>
         <Row className="align-items-center mb-5">
           <Col md={8}>
-            <h1 className="fw-bold mb-4" style={{ color: '#8064A2' }}>
-              Your Hobby, Your <span style={{ color: '#0096C8' }}>Community</span>...
+            <h1 className=" fs-36px fw-bold mb-4" style={{ color: '#000000' }}>
+              Your <span style={{ color: '#9b59b6' }}>Hobby</span>, Your <span style={{ color: '#0096C8' }}>Community</span>...
             </h1>
             <Button variant="primary" style={{ backgroundColor: '#8064A2', borderColor: '#8064A2' }}>
               Get started
